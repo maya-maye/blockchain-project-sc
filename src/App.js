@@ -5,6 +5,7 @@ import Post from "./Pages/Post";
 import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home";
 import Create from "./Pages/Create/Create";
+import About from "./Pages/About"
 import {BrowserRouter, Routes, Route, Navigate, Link} from "react-router-dom"
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={user ? <Login /> : <Login />} />
         <Route path="/post/:id" element={user ? <Post />: <Navigate to="/login" />} />
         <Route path="/create" element={<Create />} />
+        <Route path="/about" element={<About />} />
 
       </Routes>
      
