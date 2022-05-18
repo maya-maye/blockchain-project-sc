@@ -10,7 +10,7 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: 'Create story',
+        title: 'See Past Results',
         url: '/Create',
         cName: 'nav-links'
     },

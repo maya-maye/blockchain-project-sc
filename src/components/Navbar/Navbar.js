@@ -14,7 +14,7 @@ class Navbar extends Component {
     render() {
         return(
             <nav className="NavbarItems">
-                <h1 className="navbar-logo"><Link className="link" to="/">Fictune</Link><i className = "fab fa-react"></i></h1>
+                <h1 className="navbar-logo"><Link className="link" to="/">Betting App</Link><i className = "fab fa-react"></i></h1>
                 {/* <h1 className="navbar-logo">Fictune<i className = "fab fa-react"></i></h1> */}
 
                 <div className="menu-icon" onClick={this.handleClick}>

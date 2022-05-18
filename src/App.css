@@ -10,6 +10,14 @@
   padding: 50px 100px;
   justify-content: space-between;
   flex-wrap: wrap;
+  height: 400px;
+  width: 550px;
+  background: #eeda98;
+  border-radius: 30px;
+  /* align-items: center; */
+  margin-right: 500px;
+  margin-left: 500px;
+  margin-top: 50px;
 }
 
 .card {
@@ -184,6 +192,57 @@ input{
   color: inherit;
   text-decoration: none;
 }
+/*
+.App{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: white;
+}
+*/
+
+.question{
+  height: 300px;
+  width: 500px;
+  background: #eee2be;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: center;
+}
+
+.questionheader {
+  color: rgb(11, 2, 2);
+  align-items: center;
+  height: 35px;
+  width: 450px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 30px;
+}
+
+.questionitself {
+  align-items: center;
+  background: white;
+  height: 30px;
+  width: 450px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 30px;
+
+}
+
+.bettingamount {
+  align-items: center;
+  background: white;
+  height: 50px;
+  width: 450px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 30px;
+}
+
 
 
 

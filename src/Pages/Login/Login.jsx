@@ -1,10 +1,12 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import Google from "../Login/img/google.png"
 import Facebook from "../Login/img/facebook.png"
-import Github from "../Login/img/github.png"
+// import Github from "../Login/img/github.png"
+import Metamask from "../Login/img/metamask.png"
 import "./login.css"
 
 const Login = () => {
+
   return (
     <div className="login">
       <h1 className="loginTitle">Choose a Login Method</h1>
@@ -19,8 +21,8 @@ const Login = () => {
             Facebook
           </div>
           <div className="loginButton github">
-            <img src={Github} alt="" className="icon" />
-            Github
+            <img src={Metamask} alt="" className="icon" />
+            Metamask
           </div>
         </div>
         <div className="center">
