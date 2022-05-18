@@ -10,15 +10,17 @@ import {BrowserRouter, Routes, Route, Navigate, Link} from "react-router-dom"
 import Question from "./Question"
 
 function App() {
+  const user = true
   return (
-    // const user = true;
     <BrowserRouter>
     <div className="App">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/login" element={user ? <Login /> : <Login />} />
-        <Route path="/post/:id" element={user ? <Post />: <Navigate to="/login" />} /> */}
+        <Route path="/login" element={user ? <Login /> : <Login />} />
+        <Route path="/post/:id" element={user ? <Post />: <Navigate to="/login" />} />  
+        <Route path="/login" element={<Navigate to="/login" />}/>
+        <Route path="/post/:id" element={<Navigate to="/login" />} /> 
         <Route path="/create" element={<Create />} />
         <Route path="/about" element={<About />} />
 
