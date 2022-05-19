@@ -15,15 +15,15 @@ contract VotingGame{
         poolB=0;
     }
 
-    function getBalance() public returns (uint){
+    function getBalance() public view returns (uint){
         return address(this).balance;
     }
 
-    function getMoneyInPoolA() public returns(uint){
+    function getMoneyInPoolA() public view returns(uint){
         return poolA;
     }
 
-    function getMoneyInPoolB() public returns(uint){
+    function getMoneyInPoolB() public view returns(uint){
         return poolB;
     }
 
@@ -37,7 +37,6 @@ contract VotingGame{
         a.push(payable(msg.sender));
         valuesA.push(msg.value);
     }
-    
     //same function for B
     function putInB() public payable{
         require(msg.sender!=owner);
@@ -46,7 +45,6 @@ contract VotingGame{
         b.push(payable(msg.sender));
         valuesB.push(msg.value);
     }
-    
     //gives the winner back their money doubled
     function giveBack() public {
         require(msg.sender==owner);
@@ -68,4 +66,6 @@ contract VotingGame{
         poolA=0;
         poolB=0;
     }
+
+
 }
