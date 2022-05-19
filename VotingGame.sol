@@ -4,8 +4,8 @@ contract VotingGame{
     address public owner;
     uint poolA;
     uint poolB;
-    address payable[] public a;
-    address payable[] public b;
+    address payable[] a;
+    address payable[] b;
     uint[] private valuesA;
     uint[] private valuesB;
     
@@ -19,11 +19,11 @@ contract VotingGame{
         return address(this).balance;
     }
 
-    function getMoneyInPoolA() private returns(uint){
+    function getMoneyInPoolA() public returns(uint){
         return poolA;
     }
 
-    function getMoneyInPoolB() private returns(uint){
+    function getMoneyInPoolB() public returns(uint){
         return poolB;
     }
 
@@ -31,6 +31,7 @@ contract VotingGame{
     //can't use private?
     //I wrote it like what I found online, but I don't how how the user was able to enter the value
     function putInA() public payable{
+        require(msg.sender!=owner);
         require(msg.value>.01 ether, "You must put in at least .01 ether to enter.");
         poolA+=msg.value;
         a.push(payable(msg.sender));
@@ -39,6 +40,7 @@ contract VotingGame{
     
     //same function for B
     function putInB() public payable{
+        require(msg.sender!=owner);
         require(msg.value>.01 ether, "You must put in at least .01 ether to enter.");
         poolB+=msg.value;
         b.push(payable(msg.sender));
@@ -46,7 +48,7 @@ contract VotingGame{
     }
     
     //gives the winner back their money doubled
-    function giveBack(uint amount) public {
+    function giveBack() public {
         require(msg.sender==owner);
         if (getMoneyInPoolA()>getMoneyInPoolB()){
             for (uint i=0;i<b.length;i++){
@@ -58,6 +60,12 @@ contract VotingGame{
                 a[i].transfer(2*valuesA[i]);
             }
         }
+        //renew for new round
+        a=new address payable[](0);
+        b=new address payable[](0);
+        valuesA=new uint[](0);
+        valuesA=new uint[](0);
+        poolA=0;
+        poolB=0;
     }
-
 }
