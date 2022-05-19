@@ -2,45 +2,62 @@ pragma solidity 0.8.11;
 
 contract VotingGame{
     address public owner;
-    mapping (address => uint) public Balances;
     uint poolA;
     uint poolB;
-    address[] a;
-    address[] b;
-    uint[] increAmountA;
-    uint[] increAmountB;
+    address payable[] public a;
+    address payable[] public b;
+    uint[] private valuesA;
+    uint[] private valuesB;
     
     constructor(){
         owner=msg.sender;
-        Balances[address(this)]=0;
-        choiceA=0;
-        choiceB=0;
+        poolA=0;
+        poolB=0;
     }
 
-    function getBalance() public view returns (uint){
-        return Balances[address(this)];
+    function getBalance() public returns (uint){
+        return address(this).balance;
     }
 
-    function getMoneyInPoolA() returns(uint){
+    function getMoneyInPoolA() private returns(uint){
         return poolA;
     }
 
-    function getMoneyInPoolB() returns(uint){
+    function getMoneyInPoolB() private returns(uint){
         return poolB;
     }
 
     //decrease the user's money by amount and increase ours. 
     //can't use private?
-    function putInA(uint amount) public payable{
-        poolA+=amount;
-        Balances[address(this)]+=amount;
-        Balances[msg.sender]-=amount;
+    //I wrote it like what I found online, but I don't how how the user was able to enter the value
+    function putInA() public payable{
+        require(msg.value>.01 ether, "You must put in at least .01 ether to enter.");
+        poolA+=msg.value;
+        a.push(payable(msg.sender));
+        valuesA.push(msg.value);
     }
+    
     //same function for B
-
+    function putInB() public payable{
+        require(msg.value>.01 ether, "You must put in at least .01 ether to enter.");
+        poolB+=msg.value;
+        b.push(payable(msg.sender));
+        valuesB.push(msg.value);
+    }
+    
     //gives the winner back their money doubled
-    function giveBack(uint amount) public payable{
-
+    function giveBack(uint amount) public {
+        require(msg.sender==owner);
+        if (getMoneyInPoolA()>getMoneyInPoolB()){
+            for (uint i=0;i<b.length;i++){
+                b[i].transfer(2*valuesB[i]);
+            }
+        }
+        else{
+            for (uint i=0;i<a.length;i++){
+                a[i].transfer(2*valuesA[i]);
+            }
+        }
     }
 
 }
