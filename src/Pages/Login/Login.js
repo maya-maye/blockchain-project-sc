@@ -95,11 +95,6 @@ export default function Login() {
     checkIfWalletIsConnected(setUserAddress);
   }, []);
 
-  /*useEffect(() => {
-    onAddressChanged(userAddress);
-  }, [userAddress]);
-  */
-
   return userAddress ? (
     <div className="loginSuceessful">
     Successfully connected with <Address userAddress={userAddress} />
