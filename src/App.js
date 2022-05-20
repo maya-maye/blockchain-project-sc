@@ -8,6 +8,8 @@ import Create from "./Pages/Create/Create";
 import About from "./Pages/About"
 import {BrowserRouter, Routes, Route, Navigate, Link} from "react-router-dom"
 import Question from "./Question"
+//import {Route, Router, BroserRouter} from "react-router-dom";
+//import Minter from "./component/minter"
 
 function App() {
   const user = true
@@ -23,7 +25,6 @@ function App() {
         <Route path="/post/:id" element={<Navigate to="/login" />} /> 
         <Route path="/create" element={<Create />} />
         <Route path="/about" element={<About />} />
-
       </Routes>
       {/* <Question q = "Is a hotdog a sandwich?"/> */}
     </div>

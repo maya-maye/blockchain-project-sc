@@ -1,6 +1,7 @@
 import {posts} from "../data"
 import Card from "../components/Card"
 import Question from "../Question.js"
+import "../App.css"
 
 const Home = () => {
     return (
