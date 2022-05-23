@@ -11,10 +11,11 @@
   justify-content: space-between;
   flex-wrap: wrap;
   height: 500px;
-  width: 800px;
-  background: hsl(188, 42%, 54%);
+  width: 900px;
+  background: #daeaeb;
   border-radius: 15px;
-  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
   margin-right: 500px;
   margin-left: 500px;
   margin-top: 50px;
@@ -47,7 +48,7 @@
   border-radius: 10px;
   background-color: rgba(53, 16, 102, 0.678);
   padding: 10px;
-  color: white;
+  color: rgb(219, 125, 125);
   font-weight: bold;
   cursor: pointer;
 }
@@ -216,28 +217,30 @@ input{
   display: flex;
   flex-direction: column;
   justify-content:space-around;
-  margin-left: 100px;
+  margin-left: 300px;
   align-items: center;
 }
 
 .questionheader {
   color: rgb(45, 8, 8);
   align-items: center;
-  height: 35px;
+  height: 10px;
   width: 450px;
   display: flex;
   justify-content: space-around;
-  border-radius: 30px;
+  border-radius: 10px;
 }
 
 .questionitself {
-  background: white;
-  height: 50px;
-  width: 450px;
+  background: rgb(6, 76, 77);
+  height: 100px;
+  width: 550px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-radius: 30px;
+  border-radius: 10px;
+  font-weight: 2000;
+  color:rgb(226, 246, 246)
 
 }
 
@@ -245,12 +248,36 @@ input{
   align-items: center;
   background: white;
   height: 50px;
-  width: 450px;
+  width: 500px;
   display: flex;
   justify-content: space-around;
-  border-radius: 30px;
+  border-radius: 5px;
 }
 
+.chooseButton{
+  width: 250px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: large;
+  font-weight: 2000;
+}
+
+.yes{
+  color: rgb(27, 143, 145);
+  background-color: rgb(255, 255, 255);
+}
+.no{
+  background-color: rgb(27, 143, 145);
+  color: rgb(255, 255, 255);
+}
 
 
 
