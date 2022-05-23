@@ -246,17 +246,19 @@ input{
 
 .bettingamount {
   align-items: center;
-  background: white;
-  height: 50px;
+  padding: 5px 10px;
+  height: 60px;
   width: 500px;
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   border-radius: 5px;
 }
 
 .chooseButton{
-  width: 250px;
-  padding: 15px 25px;
+  width: 200px;
+  height: 70px;
+  padding: 20px 20px;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -277,6 +279,19 @@ input{
 .no{
   background-color: rgb(27, 143, 145);
   color: rgb(255, 255, 255);
+}
+
+.error{
+  font-size: 12px;
+  color: red;
+  padding: 5px;
+  width: 500px;
+  height: 10px;
+  display: none;
+}
+
+input:invalid ~ span{
+  display: block;
 }
 
 
